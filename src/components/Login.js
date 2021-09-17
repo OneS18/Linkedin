@@ -2,9 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import signInApi from "../actions";
+import { Redirect } from "react-router";
+
 const Login = (props) => {
   return (
     <Container>
+      {props.user && <Redirect to="/home/" />}
       <Nav>
         <a href="/">
           <img src="/images/login-logo.svg" alt="" />
@@ -110,8 +113,8 @@ const Hero = styled.div`
     padding-bottom: 0;
     width: 55%;
     font-size: 56px;
-    color: #2977c9;
-    font-weight: 200;
+    color: #8f5859;
+    font-weight: 100;
     line-height: 70px;
     @media (max-width: 768px) {
       text-align: center;
@@ -148,7 +151,6 @@ const Form = styled.div`
   width: 408px;
   @media (max-width: 768px) {
     margin-top: 20px;
-    vertical-align: middle;
   }
 `;
 
@@ -167,6 +169,7 @@ const Google = styled.button`
   transition-duration: 167ms;
   font-size: 20px;
   color: rgba(0, 0, 0, 0.6);
+
   &:hover {
     background-color: rgba(207, 207, 207, 0.25);
     color: rgba(0, 0, 0, 075);
@@ -174,7 +177,9 @@ const Google = styled.button`
 `;
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    user: state.userState.user,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => ({
