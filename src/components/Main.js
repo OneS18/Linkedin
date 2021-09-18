@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import PostModal from "./PostModal";
 import { useState } from "react";
+import { connect } from "react-redux";
 
 import React from "react";
 
@@ -52,7 +53,11 @@ const Main = (props) => {
       <Article>
         <SharedActor>
           <a>
-            <img src="/images/user.svg" alt="" />
+            {props.user && props.user.photoURL ? (
+              <img src={props.user.photoURL} alt="" />
+            ) : (
+              <img src="/images/user.svg" alt="" />
+            )}
             <div>
               <span>Title</span>
               <span>Info</span>
@@ -207,6 +212,7 @@ const SharedActor = styled.div`
     img {
       width: 48px;
       height: 48px;
+      border-radius: 50%;
     }
     & > div {
       display: flex;
@@ -307,4 +313,12 @@ const SocialActions = styled.div`
   }
 `;
 
-export default Main;
+const mapStateToProps = (state) => {
+  return {
+    user: state.userState.user,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

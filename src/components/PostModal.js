@@ -3,6 +3,8 @@ import { useState } from "react";
 import React from "react";
 import ReactPlayer from "react-player";
 import { connect } from "react-redux";
+import firebase from "firebase/compat/app";
+import { postArticleAPI } from "../actions";
 
 const PostModal = (props) => {
   const [editorText, setEditorText] = useState("");
@@ -25,6 +27,24 @@ const PostModal = (props) => {
     setVideoLink("");
     setAssetArea(area);
   };
+
+  // function postArticle(event) {
+  //   event.preventDefault();
+  //   if (event.target !== event.currentTarget) {
+  //     return;
+  //   }
+
+  //   const payload = {
+  //     image: shareImage,
+  //     video: videoLink,
+  //     description: editorText,
+  //     user: props.user,
+  //     timestamp: Firebase.firestore.Timestamp.now(),
+  //   };
+
+  //   props.postArticle(payload);
+  //   reset(event);
+  // }
 
   const reset = (e) => {
     setEditorText("");
@@ -75,7 +95,7 @@ const PostModal = (props) => {
                       <label htmlFor="file">Share an Image</label>
                     </p>
                     {shareImage && (
-                      <img src={URL.createObjectURL(shareImage)} />
+                      <img src={URL.createObjectURL(shareImage)} alt="" />
                     )}
                   </UploadImage>
                 ) : (
@@ -110,7 +130,10 @@ const PostModal = (props) => {
                   Anyone
                 </AssetButton>
               </ShareComment>
-              <PostButton disabled={!editorText ? true : false}>
+              <PostButton
+                disabled={!editorText ? true : false}
+                // onClick={(event) => postArticle(event)}
+              >
                 Post
               </PostButton>
             </SharedCreation>
@@ -273,6 +296,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (state) => ({});
+const mapDispatchToProps = (dispatch) => {
+  // return {
+  //   postArticle: (payload) => dispatch(postArticleAPI(payload)),
+  // };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostModal);

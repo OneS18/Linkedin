@@ -1,4 +1,5 @@
-import { auth, provider } from "../firebase";
+import { auth, provider, storage } from "../firebase";
+import db from "../firebase";
 import { signInWithPopup } from "firebase/auth";
 import { SET_USER } from "./actionType";
 
