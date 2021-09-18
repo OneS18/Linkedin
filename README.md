@@ -2,10 +2,10 @@ Unfortunately I can't deploy this Linkedin-clone app,
 
 but here is some steps for you to be anable to see it live:
 
-git clone https://github.com/OneS18/Linkedin.git
-cd [toFolder]
-npm install
-npm start
+git clone https://github.com/OneS18/Linkedin.git &&
+cd [toFolder] &&
+npm install  &&
+npm start 
 
 and enjoy
 
