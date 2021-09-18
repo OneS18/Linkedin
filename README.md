@@ -18,6 +18,8 @@ firebase &&
 firebase tools &&
 react-player
 
+I work on functionality that allows you to post a actual Photo/Words/Video/Article, that need to come out soon!
+
 
 here is some pics:
 
