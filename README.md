@@ -9,6 +9,16 @@ npm start
 
 and enjoy
 
+Packges what I used in this project:
+react-router-dom &&
+styled-components &&
+Redux &&
+Redux-thunk &&
+firebase &&
+firebase tools &&
+react-player
+
+
 here is some pics:
 
 
