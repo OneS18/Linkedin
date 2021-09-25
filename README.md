@@ -1,4 +1,3 @@
-#Linkedin Clone
 
 ##Introduction
 
