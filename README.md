@@ -7,19 +7,13 @@ In this what app we can do a simple login with google funtionality and go to the
 In this app I use :
 
 -React-router-dom for "teleporting" the app from Login page to Home page.
+
 -Styled-Components for styling.
+
 -Redux for state management.
+
 -Firebase for Login and Sign out funtionality.
 
-
-Packges what I used in this project:
-react-router-dom &&
-styled-components &&
-Redux &&
-Redux-thunk &&
-firebase &&
-firebase tools &&
-react-player
 
 I work on functionality that allows you to post a actual Photo/Words/Video/Article, that need to come out soon!
 
