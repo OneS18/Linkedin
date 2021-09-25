@@ -1,13 +1,16 @@
-Unfortunately I can't deploy this Linkedin-clone app,
+#Linkedin Clone
 
-but here is some steps for you to be anable to see it live:
+##Introduction
 
-git clone https://github.com/OneS18/Linkedin.git &&
-cd [toFolder] &&
-npm install  &&
-npm start 
+In this what app we can do a simple login with google funtionality and go to the home page.
 
-and enjoy
+In this app I use :
+
+-React-router-dom for "teleporting" the app from Login page to Home page.
+-Styled-Components for styling.
+-Redux for state management.
+-Firebase for Login and Sign out funtionality.
+
 
 Packges what I used in this project:
 react-router-dom &&
